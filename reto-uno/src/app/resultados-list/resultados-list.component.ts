@@ -8,9 +8,14 @@ import { BusquedaService } from '../busqueda.service';
 })
 export class ResultadosListComponent implements OnInit {
   resultados = [];
+  mensageError: string;
   constructor(private busquedaService: BusquedaService) {}
   ngOnInit() {    
-    this.busquedaService.getDatos().subscribe(resBusquedaData => this.resultados = resBusquedaData)
+    this.busquedaService.getDatos()
+    .subscribe(resBusquedaData => this.resultados = resBusquedaData,
+                 resBusquedaError => this.mensageError = resBusquedaError);
+
+                 /*https://plnkr.co/edit/hfiJ3SQokGjOwsf9OviG?p=preview*/
   }
 
 }

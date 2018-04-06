@@ -1,7 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Resultado } from './resultado';//Importa clase
 import { Http, Response} from '@angular/http';//Importa modulo Http y Response
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/observable/throw';
+
 
 @Injectable()
 export class BusquedaService {
@@ -22,7 +26,13 @@ export class BusquedaService {
   //METODO PARA OBTENER DATOS
   getDatos(){
     return this.http.get(this.apiURL)
-      .map((res: Response) => res.json())  
+      .map((res: Response) => res.json())
+      .catch(this.errorHandler);
+  }
+
+  errorHandler(error:Response){
+    console.error(error);
+    return Observable.throw(error || "Error de servidor");
   }
   //METODO PARA OBTENER RESULTADOS
   getResultados(){
