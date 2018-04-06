@@ -12,10 +12,12 @@ export class ResultadosListComponent implements OnInit {
   constructor(private busquedaService: BusquedaService) {}
   ngOnInit() {    
     this.busquedaService.getDatos()
+    //.subscribe(resBusquedaData => this.resultados = Array.of(this.resultados),
     .subscribe(resBusquedaData => this.resultados = resBusquedaData,
                  resBusquedaError => this.mensageError = resBusquedaError);
-
-                 /*https://plnkr.co/edit/hfiJ3SQokGjOwsf9OviG?p=preview*/
+                 
+                 /*https://plnkr.co/edit/hfiJ3SQokGjOwsf9OviG?p=preview
+                   https://forum.ionicframework.com/t/solved-ngfor-only-supports-binding-to-iterables-such-as-arrays/59597*/
   }
 
 }
