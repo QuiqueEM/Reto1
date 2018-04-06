@@ -9,7 +9,7 @@ import { BusquedaService } from '../busqueda.service';
 export class ResultadosListComponent implements OnInit {
   resultados = [];
   constructor(private busquedaService: BusquedaService) {}
-  ngOnInit() {
+  ngOnInit() {    
     this.busquedaService.getDatos().subscribe(resBusquedaData => this.resultados = resBusquedaData)
   }
 
