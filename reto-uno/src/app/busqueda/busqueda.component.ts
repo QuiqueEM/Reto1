@@ -13,15 +13,9 @@ import 'rxjs/add/operator/map';
 
 export class BusquedaComponent implements OnInit {
 
-  resultado: Resultado = {
-    displayName: 'Reloj',
-    smallImage: 'http://www.dportenis.mx/wcsstore/ExtendedSitesCatalogAssetStore/images/catalog/thumbnail/4005366-0000V1.jpg',
-    list_Price: '1523.00',
-
-  }
-  
+  resultado: Resultado ;
   //Declara privada la URL de la API
-  private apiURL = 'http://www.liverpool.com.mx/tienda?s=nintendo&d3106047a194921c01969dfdec083925=json';
+  private apiURL = 'http://www.liverpool.com.mx/tienda?s=nintendo&d3106047a194921c01969dfdec083925=json';  
   data: any = {};
   
   //LLAMA METODOS EN EL CONSTRUCTOR

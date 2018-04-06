@@ -1,21 +1,18 @@
 <div>
   <label>Buscar:
-    <input [(ngModel)]="resultado.displayName" placeholder="ingrese datos">
+    <input  placeholder="ingrese datos">
+    <input type="text" class="field-search cross_site_script_val_pop" id="buscador" name="s" autocomplete="off" placeholder="" onfocus="this.placeholder = ''" maxlength="50">
   </label>
 </div>
+<h2>Resultados Json</h2>
+<hr>
 
 <div class="card">
-  <ng-container *ngFor = "let record of data.records">
-    <h2>{{record.displayName}}</h2>
-    <h2><img src="{{record.smallImage}}" alt="Smiley face" height="42" width="42"></h2>
-    <h2>{{record.list_Price}}</h2>
+  <ng-container *ngFor="let contact of data.contacts">
+    <h2>{{contact.name}}</h2>
+    <h2>{{contact.location}}</h2>
+    <h2>{{contact.role}}</h2>
+    <h2><img src="{{contact.smallImage}}"  height="42" width="42"></h2>
+    <h2>{{contact.list_Price}}</h2>
   </ng-container>
 </div>
-
-
-
-<h2>Resultados</h2>
-<hr>
-<div><span>nombre: </span>{{resultado.displayName}}</div>
-<div><span>imagen: </span><img src="{{resultado.smallImage}}" alt="Smiley face" height="42" width="42"></div>
-<div><span>costo: </span>{{resultado.list_Price}}</div>
