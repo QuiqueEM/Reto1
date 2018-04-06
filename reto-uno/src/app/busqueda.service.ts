@@ -36,8 +36,9 @@ export class BusquedaService {
   }
   //METODO PARA OBTENER RESULTADOS
   getResultados(){
-    this.getDatos().subscribe(data => {
+    this.getDatos().subscribe(data => {      
       console.log(data);
+      console.log(this.data = Array.of(this.data));
       this.data = data
     })
   }
